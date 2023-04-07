@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Yearwise/static/css/main.54832298.css",
+    "main.js": "/Yearwise/static/js/main.eb44d907.js",
+    "index.html": "/Yearwise/index.html",
+    "main.54832298.css.map": "/Yearwise/static/css/main.54832298.css.map",
+    "main.eb44d907.js.map": "/Yearwise/static/js/main.eb44d907.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54832298.css",
+    "static/js/main.eb44d907.js"
+  ]
+}
