@@ -1,0 +1,433 @@
+
+:root {
+    --offWhite: #DFDFDF;
+    --primaryGray: #E7E7E7;
+    --darkGray: #5D6D7E;
+    --primaryRed: #F44336;
+    --darkRed: #330000;
+    --primaryYellow: #F2DE90;
+    --darkYellow: #634D0E;
+    --primaryBlue: #3498DB;
+    --darkBlue: #000033;
+    --primaryPurple: #5067E3;
+    --primaryGreen: #66BB6A;
+    --secondaryGreen: #4CAF50;
+    --darkGreen: #003300;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--offWhite);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+/* COMMENT */
+
+.commentWrapper {
+    margin: 5px auto;
+    background-image: linear-gradient(
+        90deg,
+        var(--offWhite) 92%,
+        black 92%,
+        black 92.33%,
+        var(--primaryRed) 92.33%
+    );
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentMinor {
+    flex-basis: 10%;
+}
+
+.commentMajor {
+    flex-basis: 70%;
+}
+
+.checkHouse {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+input:checked+.checkHouse::after {
+    content: "\2713";
+    scale: 3.5;
+    color: var(--primaryGreen);
+    transform: translate(1px, -1px);
+}
+
+.commentLabel {
+    border: 2px solid black;
+    background-color: white;
+    width: 100%;
+    height: 110%;
+    min-height: 50px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.commentMajor div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.commentMajor div textarea {
+    width: 85%;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
+}
+
+.commentMajor div button {
+    border: none;
+    background-color: white;
+}
+
+.commentMajor div button:hover {
+    font-weight: 800;
+}
+
+.timer {
+    width: 96%;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1.25em;
+    pointer-events: none;
+}
+
+.reschedule {
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+}
+
+.reschedule:hover {
+    font-weight: 700;
+}
+
+.indexer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.indexer input {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.indexer input::placeholder {
+    color: black;
+    font-weight: 500;
+}
+
+.trashButton {
+    width: 100%;
+    flex-basis: 8%;
+    position: relative;
+}
+
+.trashButton::before {
+    content: "\2717";
+    scale: 3.5;
+    color: var(--darkRed);
+    transition: .15s ease-in;
+    position: relative;
+}
+
+.trashButton:hover::before {
+    scale: 4;
+    color: black;
+}
+
+.tooltipText {
+    opacity: 0;
+    position: absolute;
+    left: -200%;
+    top: 100%;
+    background-color: var(--offWhite);
+    border-radius: 5px;
+    transition: opacity .5s 2s;
+    pointer-events: none;
+}
+
+.trashButton:hover .tooltipText {
+    opacity: 1
+}
+
+
+
+
+/*COMMENT*/
+/*TASKBAR*/
+
+
+
+
+.Taskbar {
+    position: absolute;
+    left: calc(50% + 12px);
+    top: 1vh;
+    min-height: 88vh;
+}
+
+.tab {
+    border-radius: 10px 10px 0 0;
+    height: 4vh;
+    min-height: 30px;
+    margin-right: 5px;
+    transform: translateY(2px);
+    border: 2px solid black;
+    font-size: clamp(.8em, 2.5vw, 1.5em);
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.activeTab {
+    border-bottom: 0;
+}
+
+.taskInput {
+    height: 55px;
+    padding: 10px;
+    border-radius: 0 10px 0 0;
+    border: 2px solid black;
+    border-bottom: 0;
+}
+
+.commentCollector {
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .Taskbar {
+        position: absolute;
+        height: 90vh;
+        top: calc(110vh + 12px);
+        left: 12px;
+        transform: translateX(-2px);
+    }
+
+}
+
+
+
+/*TASKBAR*/
+/*SCHEDULE*/
+
+
+
+
+.Schedule {
+    margin: 12px;
+    position: relative
+}
+
+
+
+
+/*SCHEDULE*/
+/*DAY*/
+
+
+
+
+.dayCard {
+    background-color: var(--primaryGreen);
+    flex-basis: 13%;
+    height: 11vh;
+    margin: 1vh 0;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+    color: var(--darkGreen);
+    font-weight: bold;
+    font-size: clamp(1em, 4vmin, 2.25em);
+    line-height: 50px;
+    cursor: pointer;
+    transition: .15s linear;
+}
+
+.Day {
+    background-color: var(--primaryGreen);
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    transition: .15s ease-in-out;
+    height: calc(84vh - 4px);
+    width: 100%;
+}
+
+.dayTitle {
+    font-size: 3em;
+    color: var(--darkGreen);
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+
+/*DAY*/
+/*MONTH*/
+
+
+
+
+.monthCard {
+    flex-basis: 30%;
+    background-color: var(--primaryBlue);
+    border-radius: 5%;
+    height: 19vh;
+    width: 30%;
+    margin: clamp(2px, 1vh, 10px) auto;
+    border: 2px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .15s linear;
+
+    font-size: clamp(1em, 5vw, 3em);
+    color: var(--darkBlue);
+    font-weight: 700;
+}
+
+.Month {
+    background-color: var(--primaryBlue);
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    transition: .15s ease-in-out;
+    height: calc(84vh - 4px);
+    width: 100%;
+}
+
+.monthTitle {
+    font-size: 3em;
+    color: var(--darkBlue);
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+}
+
+.dayCollector {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.backButton {
+    position: absolute;
+    top: 7px;
+    left: 19px;
+    width: 40px;
+    height: 40px;
+}
+
+.backButton::before {
+    content: '\21B6';
+    scale: 3;
+    transform: rotate(90deg);
+    font-weight: 900;
+    transition: .25s
+}
+
+.backButton:hover::before {
+    scale: 3.5
+}
+
+
+
+/*MONTH*/
+/*YEAR*/
+
+
+
+
+Year {
+    background-color: var(--primaryRed);
+}
+
+#monthCollector {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+
+
+
+/*YEAR*/
+/*FOLDER*/
+
+
+
+
+#folder {
+    margin: 1vh 0;
+}
+
+.tabHolder {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#holder {
+    background-color: var(--primaryRed);
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border: 2px solid black;
+    height: 84vh;
+}
+
+#flipper {
+    visibility: hidden;
+    position: absolute;
+}
+
+#flipper div {
+    height: 10vh;
+    border: 1px solid black;
+    cursor: pointer
+}
+
+@media only screen and (max-width: 767px) {
+    #flipper {
+        visibility: visible;
+        position: static;
+    }
+}
