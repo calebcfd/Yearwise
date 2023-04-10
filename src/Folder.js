@@ -180,8 +180,12 @@ export class Folder extends React.Component {
 
         const flipper = (
             <div id='flipper'>
-                <div onClick={()=>{window.scrollTo(0, window.innerHeight)}} style={{marginBottom: '12px'}}></div>
-                <div onClick={()=>{window.scrollTo(0, 0)}} style={{height: '10vh', border: '1px solid black'}} ></div>
+                <label class='flexCenter' onClick={()=>{window.scrollTo(0, window.innerHeight)}} style={{marginBottom: '12px'}}>
+                    <div class="arrow" style={{transform: 'rotate(180deg)'}}></div>
+                </label>
+                <label class='flexCenter' onClick={()=>{window.scrollTo(0, 0)}} style={{height: '10vh', border: '1px solid black'}} >
+                    <div class="arrow"></div>
+                </label>
             </div>
         )
 

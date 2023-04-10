@@ -209,7 +209,7 @@ input:checked+.checkHouse::after {
     margin-right: 5px;
     transform: translateY(2px);
     border: 2px solid black;
-    font-size: clamp(.8em, 2.5vw, 1.5em);
+    font-size: clamp(.9em, 1.5vw, 1.5em);
     font-weight: 600;
     color: white;
     cursor: pointer;
@@ -294,7 +294,7 @@ input:checked+.checkHouse::after {
 }
 
 .dayTitle {
-    font-size: 3em;
+    font-size: clamp(1em, 3vmax, 3em);
     color: var(--darkGreen);
     font-weight: 700;
     text-align: center;
@@ -321,7 +321,7 @@ input:checked+.checkHouse::after {
     overflow: hidden;
     transition: .15s linear;
 
-    font-size: clamp(1em, 5vw, 3em);
+    font-size: clamp(1em, 2.5vmax, 3em);
     color: var(--darkBlue);
     font-weight: 700;
 }
@@ -419,10 +419,22 @@ Year {
     position: absolute;
 }
 
-#flipper div {
+#flipper label {
     height: 10vh;
-    border: 1px solid black;
-    cursor: pointer
+    width: 100%;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 90%;
+    height: 90%;
+    border: 300px solid transparent;
+    border-top: none;
+    border-bottom: 75px solid black;
+}
+
+.arrow:hover {
+    border-bottom: 75px solid var(--primaryRed);
 }
 
 @media only screen and (max-width: 767px) {

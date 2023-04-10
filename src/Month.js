@@ -36,13 +36,13 @@ export function Month(props) {
         {present: 'Inactive message 3', dateId: 'Thu Feb 16 2023 07:51:51 GMT-0500 (Eastern Standard Time)', check: true, index: 3, indexHolder: '3'}
     ]
 
-    const exampleEmpty = {Schedule: {active: [...exampleCommentsActive], inactive: [...exampleCommentsInactive]}, Taskbar: {active: [...exampleNumIndexActive], inactive: [...exampleNumIndexInactive]}}
+    const exampleFull = {Schedule: {active: [...exampleCommentsActive], inactive: [...exampleCommentsInactive]}, Taskbar: {active: [...exampleNumIndexActive], inactive: [...exampleNumIndexInactive]}}
+    const exampleEmpty = {Schedule: {active: [], inactive: []}, Taskbar: {active: [], inactive: []}}
 
     useEffect(()=>{
             return (()=>{
                 if (props.passToYear != undefined) {
                     props.passToYear(props.dateId.getMonth(), data);
-                console.log('Month passed ', data, 'to Year')
                 }
             })
     }, [])
